@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  dev:
+    image: localhost/go-starter-template:dev
+    build:
+      context: .
+      target: building
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 8080
+    working_dir: /usr/src/app
+    command: make run
+    environment:
+      PORT: 8080
